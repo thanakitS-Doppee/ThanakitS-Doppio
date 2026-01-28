@@ -5,4 +5,4 @@ Library    SeleniumLibrary
 
 *** Test Cases ***
 TC001
-        Log To Console    plotplotplot2
+        Log To Console    test2
