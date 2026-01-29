@@ -1,0 +1,1 @@
+robot -d ../log -i Marketpage TC001_ETH.robot

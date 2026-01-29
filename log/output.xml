@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.7 on darwin)" generated="2026-01-29T13:40:58.800210" rpa="false" schemaversion="5">
+<suite id="s1" name="TC001 ETH" source="/Users/thanakit.s/Desktop/Automate/training/Jan_training_/LP1_project/LP1_BitazzaV2/testcases/TC001_ETH.robot">
+<kw name="Open bitazza market" owner="common" type="SETUP">
+<kw name="Open Bittazza website homepage" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-29T13:40:58.967160" level="INFO">Opening browser 'chrome' to base url 'https://bitazza.co.th/home'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-29T13:40:58.967020" elapsed="3.827944"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-29T13:41:02.795676" elapsed="0.380741"/>
+</kw>
+<status status="PASS" start="2026-01-29T13:40:58.966779" elapsed="4.209976"/>
+</kw>
+<kw name="Open tradepage" owner="homepage_feature">
+<kw name="Click accept cookie" owner="homepage_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-29T13:41:03.178058" level="INFO">Clicking element '//p[text()="ยอมรับการใช้งานคุกกี้"]'.</msg>
+<arg>${home_locator.lbl_accept_cookie}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T13:41:03.177466" elapsed="0.059911"/>
+</kw>
+<status status="PASS" start="2026-01-29T13:41:03.177339" elapsed="0.060121"/>
+</kw>
+<kw name="Click dropdown market navigatorbar" owner="homepage_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-29T13:41:03.237834" level="INFO">Clicking element '//div[contains(@class, "HeaderNav_NavBarMenu") and contains(., "ตลาดซื้อขาย")]'.</msg>
+<arg>${home_locator.ddl_market}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T13:41:03.237704" elapsed="0.043734"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${home_locator.ddl_market_under_ddl}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-29T13:41:03.281597" elapsed="0.011559"/>
+</kw>
+<status status="PASS" start="2026-01-29T13:41:03.237582" elapsed="0.055648"/>
+</kw>
+<kw name="Click market under navigatorbar" owner="homepage_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-29T13:41:03.293643" level="INFO">Clicking element '(//div[contains(@class, "HeaderNav_ItemTitle") and contains(., "ตลาดซื้อขาย")])[1]'.</msg>
+<arg>${home_locator.ddl_market_under_ddl}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T13:41:03.293512" elapsed="3.668038"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${trade_spot_locator.chart}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-29T13:41:06.961900" elapsed="0.010694"/>
+</kw>
+<status status="PASS" start="2026-01-29T13:41:03.293367" elapsed="3.679298"/>
+</kw>
+<doc>เปิดตลาดซื้อขาย</doc>
+<status status="PASS" start="2026-01-29T13:41:03.177068" elapsed="3.795628"/>
+</kw>
+<kw name="Open trade market under spotpage" owner="trade_spot_feature">
+<kw name="Click market under spotpage" owner="trade_spot_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-29T13:41:06.973163" level="INFO">Clicking element '//li/div[contains(@class,"flex gap-2 items-center") and contains (.,"ตลาดซื้อขาย")]'.</msg>
+<arg>${trade_spot_locator.lbl_market}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T13:41:06.973038" elapsed="0.086849"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${trade_market_locator.productlist}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.060031" elapsed="0.060604"/>
+</kw>
+<doc>เปิดตลาดซื้อขาย หลังหน้า spot</doc>
+<status status="PASS" start="2026-01-29T13:41:06.972954" elapsed="0.147752"/>
+</kw>
+<doc>เปิดตลาดซื้อขาย หลังหน้า spot</doc>
+<status status="PASS" start="2026-01-29T13:41:06.972827" elapsed="0.147909"/>
+</kw>
+<doc>เปิดตาราง coin</doc>
+<status status="PASS" start="2026-01-29T13:40:58.966615" elapsed="8.154147"/>
+</kw>
+<test id="s1-t1" name="TC001 Verify that &quot;Bitcoin&quot; &quot;Ethereum&quot; &quot;Moo Deng&quot; &quot;Usd tether&quot; displayed correctly" line="13">
+<kw name="Get coin name and verify first 4 coin" owner="trade_market_feature">
+<kw name="Get coin name" owner="trade_market_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${trademarket_locator.coin_tbl}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.122158" elapsed="0.016229"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-01-29T13:41:07.139142" level="INFO">${coin_list} = []</msg>
+<var>${coin_list}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.138677" elapsed="0.000495"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Replace String" owner="String">
+<msg time="2026-01-29T13:41:07.139769" level="INFO">${coin_locator} = //tbody/tr[1]/td[1]</msg>
+<var>${coin_locator}</var>
+<arg>${trademarket_locator.coin_name}</arg>
+<arg>***replace***</arg>
+<arg>${index}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.139614" elapsed="0.000171"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-29T13:41:07.157892" level="INFO">${coin_name} = Bitcoin
+BTC/THB</msg>
+<var>${coin_name}</var>
+<arg>${coin_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.139868" elapsed="0.018053"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2026-01-29T13:41:07.158201" level="INFO">${coin_split} = ['Bitcoin', 'BTC/THB']</msg>
+<var>${coin_split}</var>
+<arg>${coin_name}</arg>
+<arg>\n</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.158045" elapsed="0.000172"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${coin_list}</arg>
+<arg>${coin_split}[0]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.158334" elapsed="0.000145"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2026-01-29T13:41:07.139468" elapsed="0.019048"/>
+</iter>
+<iter>
+<kw name="Replace String" owner="String">
+<msg time="2026-01-29T13:41:07.158782" level="INFO">${coin_locator} = //tbody/tr[2]/td[1]</msg>
+<var>${coin_locator}</var>
+<arg>${trademarket_locator.coin_name}</arg>
+<arg>***replace***</arg>
+<arg>${index}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.158663" elapsed="0.000138"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-29T13:41:07.171615" level="INFO">${coin_name} = Ethereum
+ETH/THB</msg>
+<var>${coin_name}</var>
+<arg>${coin_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.158869" elapsed="0.012776"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2026-01-29T13:41:07.171902" level="INFO">${coin_split} = ['Ethereum', 'ETH/THB']</msg>
+<var>${coin_split}</var>
+<arg>${coin_name}</arg>
+<arg>\n</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.171758" elapsed="0.000160"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${coin_list}</arg>
+<arg>${coin_split}[0]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.171982" elapsed="0.000169"/>
+</kw>
+<var name="${index}">2</var>
+<status status="PASS" start="2026-01-29T13:41:07.158602" elapsed="0.013577"/>
+</iter>
+<iter>
+<kw name="Replace String" owner="String">
+<msg time="2026-01-29T13:41:07.172415" level="INFO">${coin_locator} = //tbody/tr[3]/td[1]</msg>
+<var>${coin_locator}</var>
+<arg>${trademarket_locator.coin_name}</arg>
+<arg>***replace***</arg>
+<arg>${index}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.172306" elapsed="0.000123"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-29T13:41:07.185511" level="INFO">${coin_name} = Moo Deng
+MOODENG/THB</msg>
+<var>${coin_name}</var>
+<arg>${coin_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.172494" elapsed="0.013047"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2026-01-29T13:41:07.185788" level="INFO">${coin_split} = ['Moo Deng', 'MOODENG/THB']</msg>
+<var>${coin_split}</var>
+<arg>${coin_name}</arg>
+<arg>\n</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.185656" elapsed="0.000148"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${coin_list}</arg>
+<arg>${coin_split}[0]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.185867" elapsed="0.000096"/>
+</kw>
+<var name="${index}">3</var>
+<status status="PASS" start="2026-01-29T13:41:07.172251" elapsed="0.013741"/>
+</iter>
+<iter>
+<kw name="Replace String" owner="String">
+<msg time="2026-01-29T13:41:07.186218" level="INFO">${coin_locator} = //tbody/tr[4]/td[1]</msg>
+<var>${coin_locator}</var>
+<arg>${trademarket_locator.coin_name}</arg>
+<arg>***replace***</arg>
+<arg>${index}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.186115" elapsed="0.000117"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-29T13:41:07.199029" level="INFO">${coin_name} = USD Tether
+USDT/THB</msg>
+<var>${coin_name}</var>
+<arg>${coin_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.186295" elapsed="0.012765"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2026-01-29T13:41:07.199318" level="INFO">${coin_split} = ['USD Tether', 'USDT/THB']</msg>
+<var>${coin_split}</var>
+<arg>${coin_name}</arg>
+<arg>\n</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.199169" elapsed="0.000162"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${coin_list}</arg>
+<arg>${coin_split}[0]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.199392" elapsed="0.000103"/>
+</kw>
+<var name="${index}">4</var>
+<status status="PASS" start="2026-01-29T13:41:07.186063" elapsed="0.013455"/>
+</iter>
+<var>${index}</var>
+<value>${start_count}</value>
+<value>${end_count}</value>
+<status status="PASS" start="2026-01-29T13:41:07.139240" elapsed="0.060314"/>
+</for>
+<return>
+<value>${coin_list}</value>
+<status status="PASS" start="2026-01-29T13:41:07.199619" elapsed="0.000059"/>
+</return>
+<msg time="2026-01-29T13:41:07.199760" level="INFO">${coin_list} = ['Bitcoin', 'Ethereum', 'Moo Deng', 'USD Tether']</msg>
+<var>${coin_list}</var>
+<doc>Top 4 Bitazza coin</doc>
+<status status="PASS" start="2026-01-29T13:41:07.122011" elapsed="0.077762"/>
+</kw>
+<kw name="Verify coin name display" owner="trade_market_page">
+<for flavor="IN">
+<iter>
+<kw name="List Should Contain Value" owner="Collections">
+<arg>${coin_list}</arg>
+<arg>${coin_name}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.200143" elapsed="0.000552"/>
+</kw>
+<var name="${coin_name}">Bitcoin</var>
+<status status="PASS" start="2026-01-29T13:41:07.200094" elapsed="0.000627"/>
+</iter>
+<iter>
+<kw name="List Should Contain Value" owner="Collections">
+<arg>${coin_list}</arg>
+<arg>${coin_name}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.200824" elapsed="0.000087"/>
+</kw>
+<var name="${coin_name}">Ethereum</var>
+<status status="PASS" start="2026-01-29T13:41:07.200775" elapsed="0.000159"/>
+</iter>
+<iter>
+<kw name="List Should Contain Value" owner="Collections">
+<arg>${coin_list}</arg>
+<arg>${coin_name}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.201019" elapsed="0.000079"/>
+</kw>
+<var name="${coin_name}">Moo Deng</var>
+<status status="PASS" start="2026-01-29T13:41:07.200975" elapsed="0.000146"/>
+</iter>
+<iter>
+<kw name="List Should Contain Value" owner="Collections">
+<arg>${coin_list}</arg>
+<arg>${coin_name}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.201203" elapsed="0.000075"/>
+</kw>
+<var name="${coin_name}">USD Tether</var>
+<status status="PASS" start="2026-01-29T13:41:07.201160" elapsed="0.000139"/>
+</iter>
+<var>${coin_name}</var>
+<value>@{coin_data}</value>
+<status status="PASS" start="2026-01-29T13:41:07.200028" elapsed="0.001292"/>
+</for>
+<arg>${coin_list}</arg>
+<arg>${coin_data}</arg>
+<status status="PASS" start="2026-01-29T13:41:07.199898" elapsed="0.001457"/>
+</kw>
+<arg>${TC001.Verify.coin_display}</arg>
+<doc>Get name of first 4 coin</doc>
+<status status="PASS" start="2026-01-29T13:41:07.121406" elapsed="0.079975"/>
+</kw>
+<doc>Check coin list</doc>
+<tag>Marketpage</tag>
+<tag>TC001</tag>
+<status status="PASS" start="2026-01-29T13:41:07.120847" elapsed="0.080637"/>
+</test>
+<test id="s1-t2" name="TC002 Verify that &quot;Bitcoin&quot; price is not less than 300000 thb" line="18">
+<kw name="Verify coin price" owner="trade_market_feature">
+<kw name="Get coin price" owner="trade_market_page">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-01-29T13:41:07.202748" level="INFO">&amp;{coinprice_dict} = { }</msg>
+<var>&amp;{coinprice_dict}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.202582" elapsed="0.000182"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Replace String" owner="String">
+<msg time="2026-01-29T13:41:07.203009" level="INFO">${price_locator} = //tr[td//div[text()="Bitcoin"]]/td[2]</msg>
+<var>${price_locator}</var>
+<arg>${trademarket_locator.coin_price}</arg>
+<arg>***replace***</arg>
+<arg>${coin}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.202911" elapsed="0.000111"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${price_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.203114" elapsed="0.018884"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-29T13:41:07.233130" level="INFO">${coinprice} = 2,730,314.25 THB</msg>
+<var>${coinprice}</var>
+<arg>${price_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.222127" elapsed="0.011032"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2026-01-29T13:41:07.233421" level="INFO">${coinprice} = 2730314.25</msg>
+<var>${coinprice}</var>
+<arg>${coinprice}</arg>
+<arg>,</arg>
+<arg>THB</arg>
+<arg>${SPACE}</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.233274" elapsed="0.000162"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${coinprice_dict}</arg>
+<arg>${coin}</arg>
+<arg>${coinprice}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.233506" elapsed="0.000146"/>
+</kw>
+<var name="${coin}">Bitcoin</var>
+<status status="PASS" start="2026-01-29T13:41:07.202861" elapsed="0.030864"/>
+</iter>
+<var>${coin}</var>
+<value>${coin_name}</value>
+<status status="PASS" start="2026-01-29T13:41:07.202796" elapsed="0.030962"/>
+</for>
+<return>
+<value>${coinprice_dict}</value>
+<status status="PASS" start="2026-01-29T13:41:07.233806" elapsed="0.000030"/>
+</return>
+<msg time="2026-01-29T13:41:07.233911" level="INFO">${coinprice_dict} = {'Bitcoin': '2730314.25'}</msg>
+<var>${coinprice_dict}</var>
+<arg>${coin_name}</arg>
+<status status="PASS" start="2026-01-29T13:41:07.202458" elapsed="0.031467"/>
+</kw>
+<kw name="Verify coin price" owner="trade_market_page">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${price_on_screen} &gt;= ${verify_price}</arg>
+<arg>${errormessage}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.234450" elapsed="0.000308"/>
+</kw>
+<arg>${coinprice_dict['${coin_name}']}</arg>
+<arg>${verify_price}</arg>
+<arg>${errormessage}</arg>
+<status status="PASS" start="2026-01-29T13:41:07.234016" elapsed="0.000779"/>
+</kw>
+<arg>${TC002.Verify.coin.name}</arg>
+<arg>${TC002.Verify.coin.price}</arg>
+<arg>errormessage=ราคาต่ำกว่าเกณท์</arg>
+<doc>Get name of coin</doc>
+<status status="PASS" start="2026-01-29T13:41:07.201841" elapsed="0.032983"/>
+</kw>
+<doc>Check coin price Bitcoin</doc>
+<tag>Marketpage</tag>
+<tag>TC002</tag>
+<status status="PASS" start="2026-01-29T13:41:07.201610" elapsed="0.033302"/>
+</test>
+<test id="s1-t3" name="TC003 Verify that &quot;ETH&quot; price is not less than 30000 thb" line="23">
+<kw name="Verify coin price" owner="trade_market_feature">
+<kw name="Get coin price" owner="trade_market_page">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-01-29T13:41:07.235992" level="INFO">&amp;{coinprice_dict} = { }</msg>
+<var>&amp;{coinprice_dict}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.235865" elapsed="0.000142"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Replace String" owner="String">
+<msg time="2026-01-29T13:41:07.236260" level="INFO">${price_locator} = //tr[td//div[text()="Ethereum"]]/td[2]</msg>
+<var>${price_locator}</var>
+<arg>${trademarket_locator.coin_price}</arg>
+<arg>***replace***</arg>
+<arg>${coin}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.236161" elapsed="0.000113"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${price_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.236345" elapsed="0.011901"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-29T13:41:07.257874" level="INFO">${coinprice} = 91,624.15 THB</msg>
+<var>${coinprice}</var>
+<arg>${price_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.248370" elapsed="0.009531"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2026-01-29T13:41:07.258147" level="INFO">${coinprice} = 91624.15</msg>
+<var>${coinprice}</var>
+<arg>${coinprice}</arg>
+<arg>,</arg>
+<arg>THB</arg>
+<arg>${SPACE}</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.258006" elapsed="0.000155"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${coinprice_dict}</arg>
+<arg>${coin}</arg>
+<arg>${coinprice}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.258229" elapsed="0.000105"/>
+</kw>
+<var name="${coin}">Ethereum</var>
+<status status="PASS" start="2026-01-29T13:41:07.236108" elapsed="0.022251"/>
+</iter>
+<var>${coin}</var>
+<value>${coin_name}</value>
+<status status="PASS" start="2026-01-29T13:41:07.236040" elapsed="0.022349"/>
+</for>
+<return>
+<value>${coinprice_dict}</value>
+<status status="PASS" start="2026-01-29T13:41:07.258431" elapsed="0.000025"/>
+</return>
+<msg time="2026-01-29T13:41:07.258521" level="INFO">${coinprice_dict} = {'Ethereum': '91624.15'}</msg>
+<var>${coinprice_dict}</var>
+<arg>${coin_name}</arg>
+<status status="PASS" start="2026-01-29T13:41:07.235749" elapsed="0.022785"/>
+</kw>
+<kw name="Verify coin price" owner="trade_market_page">
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${price_on_screen} &gt;= ${verify_price}</arg>
+<arg>${errormessage}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.259045" elapsed="0.000210"/>
+</kw>
+<arg>${coinprice_dict['${coin_name}']}</arg>
+<arg>${verify_price}</arg>
+<arg>${errormessage}</arg>
+<status status="PASS" start="2026-01-29T13:41:07.258624" elapsed="0.000668"/>
+</kw>
+<arg>${TC003.Verify.coin.name}</arg>
+<arg>${TC003.Verify.coin.price}</arg>
+<arg>errormessage=ราคาต่ำกว่าเกณท์</arg>
+<doc>Get name of coin</doc>
+<status status="PASS" start="2026-01-29T13:41:07.235224" elapsed="0.024095"/>
+</kw>
+<doc>Check coin price ETH</doc>
+<tag>Marketpage</tag>
+<tag>TC003</tag>
+<status status="PASS" start="2026-01-29T13:41:07.235019" elapsed="0.024382"/>
+</test>
+<test id="s1-t4" name="TC004 Verify that &quot;Moo Deng&quot; price is not less than 100000 thb" line="28">
+<kw name="Verify coin price" owner="trade_market_feature">
+<kw name="Get coin price" owner="trade_market_page">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-01-29T13:41:07.261174" level="INFO">&amp;{coinprice_dict} = { }</msg>
+<var>&amp;{coinprice_dict}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.261025" elapsed="0.000166"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Replace String" owner="String">
+<msg time="2026-01-29T13:41:07.261472" level="INFO">${price_locator} = //tr[td//div[text()="Moo Deng"]]/td[2]</msg>
+<var>${price_locator}</var>
+<arg>${trademarket_locator.coin_price}</arg>
+<arg>***replace***</arg>
+<arg>${coin}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.261365" elapsed="0.000132"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${price_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.261566" elapsed="0.011104"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-29T13:41:07.283069" level="INFO">${coinprice} = 2.0555 THB</msg>
+<var>${coinprice}</var>
+<arg>${price_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.272789" elapsed="0.010309"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2026-01-29T13:41:07.283357" level="INFO">${coinprice} = 2.0555</msg>
+<var>${coinprice}</var>
+<arg>${coinprice}</arg>
+<arg>,</arg>
+<arg>THB</arg>
+<arg>${SPACE}</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.283211" elapsed="0.000160"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${coinprice_dict}</arg>
+<arg>${coin}</arg>
+<arg>${coinprice}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.283441" elapsed="0.000105"/>
+</kw>
+<var name="${coin}">Moo Deng</var>
+<status status="PASS" start="2026-01-29T13:41:07.261306" elapsed="0.022265"/>
+</iter>
+<var>${coin}</var>
+<value>${coin_name}</value>
+<status status="PASS" start="2026-01-29T13:41:07.261234" elapsed="0.022369"/>
+</for>
+<return>
+<value>${coinprice_dict}</value>
+<status status="PASS" start="2026-01-29T13:41:07.283642" elapsed="0.000025"/>
+</return>
+<msg time="2026-01-29T13:41:07.283733" level="INFO">${coinprice_dict} = {'Moo Deng': '2.0555'}</msg>
+<var>${coinprice_dict}</var>
+<arg>${coin_name}</arg>
+<status status="PASS" start="2026-01-29T13:41:07.260890" elapsed="0.022856"/>
+</kw>
+<kw name="Verify coin price" owner="trade_market_page">
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2026-01-29T13:41:07.284577" level="FAIL">ราคาต่ำกว่าเกณท์</msg>
+<arg>${price_on_screen} &gt;= ${verify_price}</arg>
+<arg>${errormessage}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2026-01-29T13:41:07.284284" elapsed="0.000386">ราคาต่ำกว่าเกณท์</status>
+</kw>
+<arg>${coinprice_dict['${coin_name}']}</arg>
+<arg>${verify_price}</arg>
+<arg>${errormessage}</arg>
+<status status="FAIL" start="2026-01-29T13:41:07.283889" elapsed="0.000857">ราคาต่ำกว่าเกณท์</status>
+</kw>
+<arg>${TC004.Verify.coin.name}</arg>
+<arg>${TC004.Verify.coin.price}</arg>
+<arg>errormessage=ราคาต่ำกว่าเกณท์</arg>
+<doc>Get name of coin</doc>
+<status status="FAIL" start="2026-01-29T13:41:07.259969" elapsed="0.024830">ราคาต่ำกว่าเกณท์</status>
+</kw>
+<doc>Check coin price Moo Deng</doc>
+<tag>Marketpage</tag>
+<tag>TC004</tag>
+<status status="FAIL" start="2026-01-29T13:41:07.259501" elapsed="0.025397">ราคาต่ำกว่าเกณท์</status>
+</test>
+<test id="s1-t5" name="TC005 Verify that &quot;UST Tether&quot; price is not less than 390000 thb" line="34">
+<kw name="Verify coin price" owner="trade_market_feature">
+<kw name="Get coin price" owner="trade_market_page">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-01-29T13:41:07.286001" level="INFO">&amp;{coinprice_dict} = { }</msg>
+<var>&amp;{coinprice_dict}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.285877" elapsed="0.000139"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Replace String" owner="String">
+<msg time="2026-01-29T13:41:07.286273" level="INFO">${price_locator} = //tr[td//div[text()="USD Tether"]]/td[2]</msg>
+<var>${price_locator}</var>
+<arg>${trademarket_locator.coin_price}</arg>
+<arg>***replace***</arg>
+<arg>${coin}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.286172" elapsed="0.000114"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${price_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.286354" elapsed="0.014920"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-29T13:41:07.309360" level="INFO">${coinprice} = 30.98 THB</msg>
+<var>${coinprice}</var>
+<arg>${price_locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.301400" elapsed="0.007985"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2026-01-29T13:41:07.309621" level="INFO">${coinprice} = 30.98</msg>
+<var>${coinprice}</var>
+<arg>${coinprice}</arg>
+<arg>,</arg>
+<arg>THB</arg>
+<arg>${SPACE}</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.309486" elapsed="0.000149"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${coinprice_dict}</arg>
+<arg>${coin}</arg>
+<arg>${coinprice}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.309700" elapsed="0.000305"/>
+</kw>
+<var name="${coin}">USD Tether</var>
+<status status="PASS" start="2026-01-29T13:41:07.286120" elapsed="0.023930"/>
+</iter>
+<var>${coin}</var>
+<value>${coin_name}</value>
+<status status="PASS" start="2026-01-29T13:41:07.286049" elapsed="0.024035"/>
+</for>
+<return>
+<value>${coinprice_dict}</value>
+<status status="PASS" start="2026-01-29T13:41:07.310128" elapsed="0.000029"/>
+</return>
+<msg time="2026-01-29T13:41:07.310387" level="INFO">${coinprice_dict} = {'USD Tether': '30.98'}</msg>
+<var>${coinprice_dict}</var>
+<arg>${coin_name}</arg>
+<status status="PASS" start="2026-01-29T13:41:07.285759" elapsed="0.024752"/>
+</kw>
+<kw name="Verify coin price" owner="trade_market_page">
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2026-01-29T13:41:07.311360" level="FAIL">ราคาต่ำกว่าเกณท์</msg>
+<arg>${price_on_screen} &gt;= ${verify_price}</arg>
+<arg>${errormessage}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2026-01-29T13:41:07.311113" elapsed="0.000295">ราคาต่ำกว่าเกณท์</status>
+</kw>
+<arg>${coinprice_dict['${coin_name}']}</arg>
+<arg>${verify_price}</arg>
+<arg>${errormessage}</arg>
+<status status="FAIL" start="2026-01-29T13:41:07.310677" elapsed="0.000791">ราคาต่ำกว่าเกณท์</status>
+</kw>
+<arg>${TC005.Verify.coin.name}</arg>
+<arg>${TC005.Verify.coin.price}</arg>
+<arg>errormessage=ราคาต่ำกว่าเกณท์</arg>
+<doc>Get name of coin</doc>
+<status status="FAIL" start="2026-01-29T13:41:07.285226" elapsed="0.026283">ราคาต่ำกว่าเกณท์</status>
+</kw>
+<doc>Check coin price USD Tether</doc>
+<tag>Marketpage</tag>
+<tag>TC005</tag>
+<status status="FAIL" start="2026-01-29T13:41:07.285006" elapsed="0.026606">ราคาต่ำกว่าเกณท์</status>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-01-29T13:41:07.311966" elapsed="0.128405"/>
+</kw>
+<status status="FAIL" start="2026-01-29T13:40:58.801143" elapsed="8.639306"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="2" skip="0">Marketpage</stat>
+<stat pass="1" fail="0" skip="0">TC001</stat>
+<stat pass="1" fail="0" skip="0">TC002</stat>
+<stat pass="1" fail="0" skip="0">TC003</stat>
+<stat pass="0" fail="1" skip="0">TC004</stat>
+<stat pass="0" fail="1" skip="0">TC005</stat>
+</tag>
+<suite>
+<stat name="TC001 ETH" id="s1" pass="3" fail="2" skip="0">TC001 ETH</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
