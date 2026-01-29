@@ -1,0 +1,31 @@
+TC001:
+  Verify:
+    coin_display:
+     - Bitcoin
+     - Ethereum
+     - Moo Deng
+     - USD Tether
+
+TC002:
+  Verify:
+    coin:
+      name: Bitcoin
+      price: 300000
+
+TC003:
+  Verify:
+    coin:
+      name: Ethereum
+      price: 30000
+
+TC004:
+  Verify:
+    coin:
+      name: Moo Deng
+      price: 100000
+
+TC005:
+  Verify:
+    coin:
+      name: USD Tether
+      price: 390000
